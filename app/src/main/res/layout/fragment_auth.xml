@@ -32,45 +32,87 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
 
-    <TextView
-        style="@style/ImportantText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text = "@string/wrong_login"
-        android:id = "@+id/wrong_data"
-        android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:visibility="invisible"
-        android:textColor="@color/wrong_data"
-        />
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/textField"
                 >
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/CommonText"
                     android:layout_width="match_parent"
-                    android:id = "@+id/login"
+                    android:id = "@+id/name"
                     android:hint="@string/login"
                     android:inputType="textEmailAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textField"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/CommonText"
+            android:layout_width="match_parent"
+            android:id = "@+id/surname"
+            android:hint="@string/login"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/textField"
                 app:endIconDrawable="@drawable/ic_show_password"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/icon"
 
                 >
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/CommonText"
                     android:layout_width="match_parent"
-                    android:id = "@+id/password"
+                    android:id = "@+id/phone"
                     android:hint="@string/password"
                     android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textField"
+        app:endIconDrawable="@drawable/ic_show_password"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/icon"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/CommonText"
+            android:layout_width="match_parent"
+            android:id = "@+id/password"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textField"
+        app:endIconDrawable="@drawable/ic_show_password"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/icon"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/CommonText"
+            android:layout_width="match_parent"
+            android:id = "@+id/password_submit"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        style="@style/ImportantText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Введены неверные данные"
+        android:id = "@+id/wrong_data"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        android:textColor="@color/wrong_data"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -85,13 +127,6 @@
                 android:layout_width="match_parent"
                 android:text = "@string/enter"
                 />
-    <Button
-        android:id = "@+id/register"
-        style="@style/CommonButton"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:text = "@string/register"
-        />
     </LinearLayout>
     <Space
         android:layout_width="wrap_content"

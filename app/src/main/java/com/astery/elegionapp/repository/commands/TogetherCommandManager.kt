@@ -1,7 +1,7 @@
 package com.astery.elegionapp.repository.commands
 
+import com.astery.elegionapp.listeners.JobListener
 import com.astery.elegionapp.repository.commands.Command.CommandTask
-import com.astery.elegionapp.repository.listeners.JobListener
 import java.util.*
 
 /** manager for commands those can get objects (created for do several task together) */

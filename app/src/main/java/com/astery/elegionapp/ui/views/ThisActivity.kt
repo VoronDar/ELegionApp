@@ -26,15 +26,14 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
 
         pushFragment()
     }
 
     /** add first fragment */
     private fun pushFragment(){
-        navController = FragmentNavController.CALENDAR
-        currentFragment = navController.thisFragment
+        navController = FragmentNavController.LOGIN
+        currentFragment = navController.thisFragment!!
 
         fragmentManager = supportFragmentManager
         val ft = fragmentManager.beginTransaction()
@@ -46,10 +45,10 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
     override fun move(action: FragmentNavController, bundle: Bundle?) {
         navController = action
         val newFragment = navController.thisFragment
-        newFragment.arguments = bundle
+        newFragment!!.arguments = bundle
 
-        currentFragment.setTransition(navController.transition)
-        newFragment.setTransition(navController.transition.reverseCopy())
+        currentFragment.setTransition(navController.transition!!)
+        newFragment.setTransition(navController.transition!!.reverseCopy()!!)
 
         val ft = fragmentManager.beginTransaction()
         ft.replace(R.id.hostFragment, newFragment, newFragment.javaClass.simpleName)
@@ -61,12 +60,8 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
     }
 
 
-    override fun changeTitle(title: String) {
-        supportActionBar?.title = title;
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-
+        return true
     }
 }

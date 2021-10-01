@@ -2,18 +2,38 @@ package com.astery.elegionapp.ui.navigation
 
 import android.os.Bundle
 import com.astery.elegionapp.ui.views.XFragment
+import com.astery.elegionapp.ui.views.fragments.AuthFragment
+import com.astery.elegionapp.ui.views.fragments.LoginFragment
+import com.astery.elegionapp.ui.views.fragments.SmsFragment
+import com.google.android.material.transition.MaterialSharedAxis
 
 /** navigation controller
  * fragments can start another fragment not with calling this fragment itself, but starting action.
  */
 enum class FragmentNavController {
+    SMS {
+        override val thisFragment: XFragment?
+            get() = SmsFragment()
+        override val parent: FragmentNavController?
+            get() = null
+        override val transition: NavigationTransition
+            get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
+    },
     AUTH {
         override val thisFragment: XFragment?
-            get() = TODO("Not yet implemented")
+        get() = AuthFragment()
         override val parent: FragmentNavController?
-            get() = TODO("Not yet implemented")
-        override val transition: NavigationTransition?
-            get() = TODO("Not yet implemented")
+        get() = null
+        override val transition: NavigationTransition
+        get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
+    },
+    LOGIN {
+        override val thisFragment: XFragment?
+        get() = LoginFragment()
+        override val parent: FragmentNavController?
+        get() = null
+        override val transition: NavigationTransition
+        get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
     };
 
     /** transition settings. It may be useful if it's required to get action from different places */

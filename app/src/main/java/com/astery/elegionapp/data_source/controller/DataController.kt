@@ -6,8 +6,8 @@ import android.util.Log
 import com.astery.elegionapp.data_source.local.database.LocalDataSource
 import com.astery.elegionapp.data_source.local.database.db_utils.LocalLoadable
 import com.astery.elegionapp.data_source.remote.RemoteDataSource
+import com.astery.elegionapp.listeners.JobListener
 import com.astery.elegionapp.repository.listeners.GetItemListener
-import com.astery.elegionapp.repository.listeners.JobListener
 import io.reactivex.observers.DisposableSingleObserver
 import java.util.*
 

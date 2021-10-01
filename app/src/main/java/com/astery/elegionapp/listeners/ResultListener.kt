@@ -3,7 +3,7 @@ package com.astery.elegionapp.listeners
 abstract class ResultListener : JobListener {
     private var listener: JobListener? = null
     abstract fun success()
-    fun done(success: Boolean) {
+    override fun done(success: Boolean) {
         if (listener != null) listener?.done(success)
         if (success) success()
     }

@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.astery.elegionapp.pojo.User
 
 @Database(
     // TODO - add entities
-    entities = [],
+    entities = [User::class],
     version = 1,
     exportSchema = false
 )

@@ -11,12 +11,13 @@
 
     <color name="items_number">#F0EEFF</color>
     <color name="article_text">#CC5E5C69</color>
-    <color name="important_article_text">#5E5C69</color>
+    <color name="important_article_text">#1C273A</color>
     <color name="more_info_text">#B3000000</color>
 
     <color name="background"></color>
 
     <color name="common_button_text">#3C6D5F</color>
+    <color name="main_button_back">#00AEEF</color>
     <color name="ignore_button_text">#CC32583D</color>
 
     <color name="ripple_color">#3360B59D</color>
@@ -25,11 +26,16 @@
     <color name="calendar_weekend">#892555</color>
     <color name="calendar_week">#26356B</color>
 
+    <color name = "text_field_back">#E3ECFD</color>
+    <color name = "wrong_data">#EF0000</color>
+
+
+
     <color name="text"></color>
     <color name="stroke"></color>
     <color name="card"></color>
     <color name="hint"></color>
-    <color name="icon"></color>
+    <color name="icon">#000000</color>
 
     <color name="divider_color">#BCCCED</color>
 </resources>

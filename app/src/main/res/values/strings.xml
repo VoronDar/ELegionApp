@@ -5,4 +5,8 @@
     <string name="enter">Вход</string>
     <string name="forget_password">Забыл пароль</string>
     <string name="register">Регистрация</string>
+    <string name="command_sms">Введите код из SMS, отправленного на номер</string>
+    <string name="example_sms">+7911320033</string>
+    <string name="notHaveSms">не пришло смс?</string>
+    <string name="wrong_login">Введены неверные данные</string>
 </resources>

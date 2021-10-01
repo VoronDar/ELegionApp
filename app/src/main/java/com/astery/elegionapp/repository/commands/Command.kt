@@ -1,6 +1,7 @@
 package com.astery.elegionapp.repository.commands
 
-import com.astery.elegionapp.repository.listeners.JobListener
+import com.astery.elegionapp.listeners.JobListener
+
 
 /** items that allow to do job with data one after one and in the end - notify parent */
 class Command(private val task: CommandTask) {

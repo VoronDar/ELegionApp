@@ -1,10 +1,10 @@
 package com.astery.elegionapp.repository.commands
 
 import android.util.Log
+import com.astery.elegionapp.listeners.JobListener
 import com.astery.elegionapp.repository.commands.Command.CommandTask
 import com.astery.elegionapp.repository.commands.Command.GetItemInCommand
 import com.astery.elegionapp.repository.listeners.GetItemListener
-import com.astery.elegionapp.repository.listeners.JobListener
 
 /** manager for commands those can get objects */
 open class CommandManager<T>(clientListener: GetItemInCommand<T>) {

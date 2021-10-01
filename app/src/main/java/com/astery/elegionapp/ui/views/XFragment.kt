@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.astery.elegionapp.listeners.ResultListener
 import com.astery.elegionapp.ui.navigation.FragmentNavController
 import com.astery.elegionapp.ui.navigation.NavigationTransition
 import com.astery.elegionapp.ui.navigation.ParentActivity
@@ -27,7 +26,6 @@ abstract class XFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle()
         setViewModelListeners()
         setListeners()
         prepareAdapters()
@@ -45,17 +43,11 @@ abstract class XFragment : Fragment() {
             (activity as ParentActivity).move(type, bundle.getBundle())}
     }
 
-    /** wrap listener from viewModel to change fragment if the result - success*/
-    protected fun getPreparedToMoveListener(
-        type: FragmentNavController,
-        bundle: Bundle?
-    ): ResultListener {
-        return object : ResultListener() {
-            override fun success() {
-                (activity as ParentActivity).move(type, bundle)
-
-            }
-        }
+    protected fun move(type: FragmentNavController, bundle: BundleGettable){
+        (activity as ParentActivity).move(type, bundle.getBundle())
+    }
+    protected fun move(type: FragmentNavController, bundle: Bundle?){
+        (activity as ParentActivity).move(type, bundle)
     }
 
     /** set transition between two fragments */
@@ -77,10 +69,6 @@ abstract class XFragment : Fragment() {
      * @return false if there is no special action for back*/
     abstract fun onBackPressed():Boolean
 
-    protected fun setTitle(){
-        (activity as ParentActivity).changeTitle(getTitle())
-    }
-
 
     /** set onClick listeners (mostly for applying actions)*/
     protected abstract fun setListeners()
@@ -88,9 +76,6 @@ abstract class XFragment : Fragment() {
     protected abstract fun setViewModelListeners()
     /** set units, layout params to adapters*/
     protected abstract fun prepareAdapters()
-
-    /** return title */
-    protected abstract fun getTitle():String
 
 
     interface BundleGettable{
