@@ -8,6 +8,7 @@ import com.astery.elegionapp.databinding.FragmentLoginBinding
 import com.astery.elegionapp.databinding.FragmentSmsBinding
 import com.astery.elegionapp.ui.views.XFragment
 
+/** */
 class SmsFragment : XFragment() {
 
     private lateinit var thisBinding:FragmentSmsBinding
@@ -22,6 +23,8 @@ class SmsFragment : XFragment() {
         thisBinding = binding as FragmentSmsBinding
         return binding.root
     }
+
+
 
 
     override fun prepareAdapters(){

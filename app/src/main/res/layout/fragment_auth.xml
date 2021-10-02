@@ -111,6 +111,7 @@
         android:id = "@+id/wrong_data"
         android:layout_marginTop="8dp"
         android:visibility="invisible"
+        android:gravity="center"
         android:textColor="@color/wrong_data"
         />
 

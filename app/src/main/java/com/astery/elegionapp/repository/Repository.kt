@@ -8,5 +8,9 @@ class Repository(val dataController: DataController) {
         // TODO
         listener.done(true)
     }
+    fun auth(name: String, surname:String, password: String, phone:String, listener: JobListener) {
+        // TODO
+        listener.done(true)
+    }
 
 }

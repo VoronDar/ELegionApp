@@ -39,7 +39,8 @@
         android:text = "@string/command_sms"
         android:layout_marginBottom="8dp"
         android:layout_gravity="center"
-        android:visibility="visible"
+        android:visibility="invisible"
+        android:gravity="center"
         android:textColor="@color/wrong_data"
         />
     <TextView
@@ -47,84 +48,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text = "@string/example_sms"
+        android:gravity="center"
         android:layout_gravity="center"
         android:id = "@+id/phone"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:textColor="@color/wrong_data"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content">
-
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/numberTextField"
+            style="@style/textField"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             app:endIconDrawable="@drawable/ic_show_password"
 
             >
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/CommonText"
-                android:layout_width="match_parent"
-                android:id = "@+id/f_1"
+                android:layout_width="wrap_content"
+                android:id = "@+id/sms"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:maxLength="4"
+                android:textSize = "30dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/numberTextField"
-            app:endIconDrawable="@drawable/ic_show_password"
-
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/CommonText"
-                android:layout_width="match_parent"
-                android:id = "@+id/f_2"
-                android:hint="@string/password"
-                android:inputType="textPassword"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/numberTextField"
-            android:layout_weight="1"
-            app:endIconDrawable="@drawable/ic_show_password"
-
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/CommonText"
-                android:layout_width="match_parent"
-                android:id = "@+id/f_3"
-                android:hint="@string/password"
-                android:inputType="textPassword"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/numberTextField"
-            app:endIconDrawable="@drawable/ic_show_password"
-
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/CommonText"
-                android:layout_width="match_parent"
-                android:id = "@+id/f_4"
-                android:hint="@string/password"
-                android:inputType="textPassword"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
 
     <TextView
         style="@style/ImportantText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text = "@string/notHaveSms"
         android:layout_marginBottom="8dp"
         android:layout_gravity="center"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:textColor="@color/wrong_data"
         />
 

@@ -85,6 +85,14 @@
                 android:layout_width="match_parent"
                 android:text = "@string/enter"
                 />
+        <Button
+            android:id = "@+id/forget"
+            style="@style/EmphasizedButton"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:text = "@string/forget_password"
+            />
     <Button
         android:id = "@+id/register"
         style="@style/CommonButton"

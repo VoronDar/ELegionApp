@@ -11,14 +11,6 @@ import com.google.android.material.transition.MaterialSharedAxis
  * fragments can start another fragment not with calling this fragment itself, but starting action.
  */
 enum class FragmentNavController {
-    SMS {
-        override val thisFragment: XFragment?
-            get() = SmsFragment()
-        override val parent: FragmentNavController?
-            get() = null
-        override val transition: NavigationTransition
-            get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
-    },
     AUTH {
         override val thisFragment: XFragment?
         get() = AuthFragment()
