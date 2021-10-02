@@ -17,6 +17,7 @@
         <item name="buttonStyle">@style/CommonButton</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
     <style name="Theme.ELegionApp.NoActionBar">
@@ -26,22 +27,27 @@
 
     <style name="Theme.ELegionApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <style name="back">
+        <item name="background">@color/background</item>
+    </style>
+
+
+
     <style name="HighLightText">
-        <item name = "android:fontFamily"></item>
         <item name = "android:textSize">@dimen/highlight_size</item>
         <item name = "android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/semibold</item>
         <item name = "android:textAlignment" tools:targetApi="jelly_bean_mr1">viewStart</item>
         <item name = "android:gravity">left</item>>
         <item name = "android:layout_gravity">center_vertical|left</item>
         <item name = "android:layout_width">match_parent</item>
         <item name = "android:layout_height">wrap_content</item>
-        <item name ="android:layout_alignParentLeft">true</item>
-        <item name ="android:layout_alignParentTop">true</item>
     </style>
 
 
     <style name="CommonText">
-        <item name = "android:fontFamily"></item>
+        <item name = "android:fontFamily">@font/regular</item>
         <item name = "android:textSize">@dimen/text_size</item>
         <item name = "android:textColor">@color/article_text</item>
         <item name = "android:textAlignment" tools:targetApi="jelly_bean_mr1">viewStart</item>
@@ -54,6 +60,42 @@
     </style>
 
 
+    <style name="filterText">
+        <item name = "android:fontFamily">@font/medium</item>
+        <item name = "android:textSize">@dimen/small_text_size</item>
+        <item name = "android:textColor">@color/black</item>
+        <item name = "android:textAlignment" tools:targetApi="jelly_bean_mr1">viewStart</item>
+        <item name = "android:gravity">left</item>>
+        <item name = "android:layout_gravity">center_vertical|left</item>
+        <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name ="android:layout_alignParentLeft">true</item>
+        <item name ="android:layout_alignParentTop">true</item>
+        <item name ="android:text">Фильтр</item>
+    </style>
+
+
+    <style name="filterEditText" parent="filterText">
+        <item name="android:minWidth">150dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text"></item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:hint">Поиск</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="filterIcon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:src">@drawable/ic_elegion</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+
     <style name="ImportantText">
         <item name = "android:fontFamily"></item>
         <item name = "android:textSize">@dimen/text_size</item>
@@ -62,6 +104,39 @@
         <item name = "android:gravity">left</item>>
         <item name = "android:layout_gravity">center_vertical|left</item>
         <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name ="android:layout_alignParentLeft">true</item>
+        <item name ="android:layout_alignParentTop">true</item>
+    </style>
+
+
+
+    <style name="littleText">
+        <item name = "android:fontFamily">@font/regular</item>
+        <item name = "android:textSize">@dimen/small_text_size</item>
+        <item name = "android:textColor">@color/black</item>
+        <item name = "android:textAlignment" tools:targetApi="jelly_bean_mr1">viewStart</item>
+        <item name = "android:gravity">left</item>>
+        <item name = "android:layout_gravity">center_vertical|left</item>
+        <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name ="android:layout_alignParentLeft">true</item>
+        <item name ="android:layout_alignParentTop">true</item>
+        <item name ="android:text">Фильтр</item>
+    </style>
+
+
+
+    <style name="showAll">
+        <item name = "android:fontFamily">@font/regular</item>
+        <item name = "android:textSize">@dimen/text_size</item>
+        <item name = "android:textColor">@color/textButtonText</item>
+        <item name = "android:layout_width">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:text">Показать всех</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
         <item name = "android:layout_height">wrap_content</item>
         <item name ="android:layout_alignParentLeft">true</item>
         <item name ="android:layout_alignParentTop">true</item>
@@ -147,6 +222,17 @@
         <item name="android:elevation" tools:targetApi="lollipop">12dp</item>
         <item name = "strokeColor">@color/black</item>
     </style>
+
+
+    <style name="filterCard">
+        <item name = "cornerRadius">10dp</item>
+        <item name = "strokeWidth">1dp</item>
+        <item name="contentPadding">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name = "strokeColor">@color/black</item>
+    </style>
+
 
     <style name="divider">
         <item name="android:layout_marginLeft">20dp</item>

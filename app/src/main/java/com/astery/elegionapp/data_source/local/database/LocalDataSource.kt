@@ -35,7 +35,9 @@ class LocalDataSource(private val database: AppDatabase) {
     fun <T> getValues(observer: DisposableSingleObserver<T>?, className: String?) {
         TODO()}
     fun <T> loadValue(item: T, loadable: LocalLoadable?, className: String?) {
-        TODO()}
+        //TODO()
+        loadable?.onCompleteListener()
+        }
 
     /** load all values  */
     fun <T> loadValues(list: T, loadable: LocalLoadable?, className: String?) {

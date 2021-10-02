@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:fadeScrollbars="true"
+    android:scrollbarThumbVertical="@android:color/white"
+    android:layout_marginTop="20dp"
+    android:overScrollMode="never">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <include
+            android:id = "@+id/requests"
+            layout = "@layout/page_request_my_request"/>
+
+        <include
+            android:id = "@+id/dissapears"
+            layout = "@layout/page_request_dissapeared"/>
+
+        <include
+            android:id = "@+id/planning"
+            layout = "@layout/page_request_planning"/>
+        <Button
+            style="@style/EmphasizedButton"
+            android:text = "Запросить отпуск"
+            />
+    </LinearLayout>
+</ScrollView>

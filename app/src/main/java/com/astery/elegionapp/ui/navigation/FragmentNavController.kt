@@ -5,6 +5,7 @@ import com.astery.elegionapp.ui.views.XFragment
 import com.astery.elegionapp.ui.views.fragments.AuthFragment
 import com.astery.elegionapp.ui.views.fragments.LoginFragment
 import com.astery.elegionapp.ui.views.fragments.SmsFragment
+import com.astery.elegionapp.ui.views.fragments.VacationFragment
 import com.google.android.material.transition.MaterialSharedAxis
 
 /** navigation controller
@@ -21,11 +22,19 @@ enum class FragmentNavController {
     },
     LOGIN {
         override val thisFragment: XFragment?
-        get() = LoginFragment()
+            get() = LoginFragment()
         override val parent: FragmentNavController?
-        get() = null
+            get() = null
         override val transition: NavigationTransition
-        get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
+            get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
+    },
+    REQUESTS {
+        override val thisFragment: XFragment?
+            get() = VacationFragment()
+        override val parent: FragmentNavController?
+            get() = null
+        override val transition: NavigationTransition
+            get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
     };
 
     /** transition settings. It may be useful if it's required to get action from different places */

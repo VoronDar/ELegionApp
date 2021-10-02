@@ -77,7 +77,7 @@ class AuthFragment : XFragment() {
                     if (success) {
                         val bundle = Bundle()
                         bundle.putString(phoneKey, thisBinding.phone.text.toString())
-                        move(FragmentNavController.SMS, bundle)
+                        //move(FragmentNavController.SMS, bundle) TODO (move)
                     } else{
                         thisBinding.wrongData.visibility = View.VISIBLE
                     }
@@ -91,6 +91,10 @@ class AuthFragment : XFragment() {
 
     override fun onBackPressed(): Boolean {
         return false
+    }
+
+    override fun getTitle(): String? {
+        return null
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

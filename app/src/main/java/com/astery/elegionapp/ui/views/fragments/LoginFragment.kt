@@ -3,6 +3,7 @@ package com.astery.elegionapp.ui.views.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
@@ -11,6 +12,8 @@ import androidx.fragment.app.viewModels
 import com.astery.elegionapp.architecture.App
 import com.astery.elegionapp.databinding.FragmentLoginBinding
 import com.astery.elegionapp.listeners.JobListener
+import com.astery.elegionapp.pojo.User
+import com.astery.elegionapp.repository.listeners.GetItemListener
 import com.astery.elegionapp.ui.navigation.FragmentNavController
 import com.astery.elegionapp.ui.viewmodels.LoginViewModel
 import com.astery.elegionapp.ui.views.XFragment
@@ -68,7 +71,8 @@ class LoginFragment : XFragment() {
                 override fun done(success: Boolean) {
                     blockManager.lock(false, "all")
                     if (success) {
-                        move(FragmentNavController.SMS, null)
+                        TODO()
+                        //move(FragmentNavController.SMS, null)
                     } else{
                         thisBinding.wrongData.visibility = VISIBLE
                         thisBinding.enter.visibility = VS.get(false)
@@ -110,7 +114,9 @@ class LoginFragment : XFragment() {
         outState.putString(loginKey, thisBinding.login.text.toString())
     }
 
-
+    override fun getTitle(): String? {
+        return null
+    }
 }
 class ForgetPasswordManager{
     var state = false

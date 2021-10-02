@@ -39,4 +39,8 @@ class SmsFragment : XFragment() {
     override fun onBackPressed(): Boolean {
         return false
     }
+
+    override fun getTitle(): String? {
+        return null
+    }
 }

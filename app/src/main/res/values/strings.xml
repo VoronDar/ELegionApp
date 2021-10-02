@@ -9,4 +9,10 @@
     <string name="example_sms">+7911320033</string>
     <string name="notHaveSms">не пришло смс?</string>
     <string name="wrong_login">Введены неверные данные</string>
+
+    <string name="vacation_tomorrow">%s завтра</string>
+    <string name="vacation_soon">%s через %d дней</string>
+    <string name="vacation_not_soon">%s через несколько недель</string>
+    <string name="vacation_plan">уходит</string>
+    <string name="vacation_actual">выходит на работу</string>
 </resources>

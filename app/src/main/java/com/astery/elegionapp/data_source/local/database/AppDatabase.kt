@@ -1,9 +1,11 @@
 package com.astery.elegionapp.data_source.local.database
 
 import android.content.Context
+import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.astery.elegionapp.data_source.local.database.dao.ThisDao
 import com.astery.elegionapp.pojo.User
 
 @Database(
@@ -15,6 +17,7 @@ import com.astery.elegionapp.pojo.User
 abstract class AppDatabase : RoomDatabase() {
 
     // TODO - add dao here
+    abstract fun dao(): ThisDao
 
 
 
@@ -28,7 +31,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context,
                     AppDatabase::class.java,
-                    "database")
+                    "database_1")
                     .build()
                 INSTANCE = instance
 

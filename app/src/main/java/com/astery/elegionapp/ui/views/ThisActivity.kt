@@ -2,6 +2,8 @@ package com.astery.elegionapp.ui.views
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.ui.AppBarConfiguration
@@ -26,13 +28,14 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         pushFragment()
     }
 
     /** add first fragment */
     private fun pushFragment(){
-        navController = FragmentNavController.LOGIN
+        navController = FragmentNavController.REQUESTS
         currentFragment = navController.thisFragment!!
 
         fragmentManager = supportFragmentManager
@@ -63,5 +66,14 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
+    }
+
+    override fun setTitle(title: String?) {
+        if (title == null){
+            binding.toolbar.visibility = GONE
+        } else{
+            binding.toolbar.visibility = VISIBLE
+            supportActionBar?.title = title
+        }
     }
 }

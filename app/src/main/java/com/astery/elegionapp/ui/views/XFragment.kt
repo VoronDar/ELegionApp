@@ -29,6 +29,7 @@ abstract class XFragment : Fragment() {
         setViewModelListeners()
         setListeners()
         prepareAdapters()
+        setTitle()
     }
 
     /** set on click listener to this view that change fragments, but it requires bundle at the moment of declaring*/
@@ -65,6 +66,10 @@ abstract class XFragment : Fragment() {
         }
     }
 
+    protected fun setTitle(){
+        (activity as ParentActivity).setTitle(getTitle())
+    }
+
     /** do smt when backPressed
      * @return false if there is no special action for back*/
     abstract fun onBackPressed():Boolean
@@ -81,4 +86,6 @@ abstract class XFragment : Fragment() {
     interface BundleGettable{
         fun getBundle():Bundle
     }
+
+    protected abstract fun getTitle():String?
 }
