@@ -130,4 +130,7 @@ class FakeRemoteDataSource(private val context: Context) : RemoteDataSource {
         }
     }
 
+    override fun <T> pushMap(map: Map<String, T>, route:String, loadable: LocalLoadable?) {
+        loadable?.onCompleteListener()
+    }
 }

@@ -3,6 +3,7 @@ package com.astery.elegionapp.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.astery.elegionapp.data_source.controller.DataController
+import com.astery.elegionapp.data_source.local.database.db_utils.LocalLoadable
 import com.astery.elegionapp.listeners.JobListener
 import com.astery.elegionapp.pojo.User
 import com.astery.elegionapp.repository.listeners.GetItemListener
@@ -32,6 +33,11 @@ class Repository(private val dataController: DataController) {
                 TODO("Not yet implemented")
             }
         }, className)
+    }
+
+    fun <T> putValues(map: Map<String, T>, route:String, listener: LocalLoadable) {
+        dataController.remoteDataSource.pushMap(map, route, listener)
+
     }
 
 }

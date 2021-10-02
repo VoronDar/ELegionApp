@@ -57,7 +57,11 @@ class ActualRemoteDataSource(private val context: Context) :RemoteDataSource {
         TODO("Not yet implemented")
     }
 
-    private fun <T> getListOfData(listener: GetItemListener<List<T>>, className: Class<T>, token: String){
+    private fun <T> getListOfData(
+        listener: GetItemListener<List<T>>,
+        className: Class<T>,
+        token: String
+    ) {
         RxTaskManager.loadValue(object : RxLoadable() {
             override fun loadSomething(em: ObservableEmitter<Any?>) {
                 val queue: RequestQueue = Volley.newRequestQueue(context)
@@ -88,7 +92,8 @@ class ActualRemoteDataSource(private val context: Context) :RemoteDataSource {
 
                 Log.i("main", stringRequest.headers.toString());
                 //"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTYxODg4LCJqdGkiOiI4MTY1MzFiMjczNGQ0NjA3OTFhY2NhZTNiMjE4NjllZCIsInVzZXJfaWQiOjF9.cyYOtfFFHFuIBgokJsxpg31CZ44AHMSRbF2FWpyfIhg"
-                val t = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTY0MDcxLCJqdGkiOiI3YzA1NDg2OTAxOWY0ZWFlOWJmYmVlNmNkZTE4MmNkNyIsInVzZXJfaWQiOjN9.M4OE7f5MKUv5XNHFyWnR8NrwZ6_Oyh2mzHrUm2cGyJk"
+                val t =
+                    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTY0MDcxLCJqdGkiOiI3YzA1NDg2OTAxOWY0ZWFlOWJmYmVlNmNkZTE4MmNkNyIsInVzZXJfaWQiOjN9.M4OE7f5MKUv5XNHFyWnR8NrwZ6_Oyh2mzHrUm2cGyJk"
                 Log.i("main", stringRequest.headers.toString());
                 Log.i("main", "3")
                 queue.add(stringRequest)
@@ -100,7 +105,11 @@ class ActualRemoteDataSource(private val context: Context) :RemoteDataSource {
         }, listener)
     }
 
-    private fun <T> getSingleData(listener: GetItemListener<T>, className: Class<T>, token: String){
+    private fun <T> getSingleData(
+        listener: GetItemListener<T>,
+        className: Class<T>,
+        token: String
+    ) {
         RxTaskManager.loadValue(object : RxLoadable() {
             override fun loadSomething(em: ObservableEmitter<Any?>) {
                 val queue: RequestQueue = Volley.newRequestQueue(context)
@@ -130,7 +139,8 @@ class ActualRemoteDataSource(private val context: Context) :RemoteDataSource {
 
                 Log.i("main", stringRequest.headers.toString());
                 //"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTYxODg4LCJqdGkiOiI4MTY1MzFiMjczNGQ0NjA3OTFhY2NhZTNiMjE4NjllZCIsInVzZXJfaWQiOjF9.cyYOtfFFHFuIBgokJsxpg31CZ44AHMSRbF2FWpyfIhg"
-                val t = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTY0MDcxLCJqdGkiOiI3YzA1NDg2OTAxOWY0ZWFlOWJmYmVlNmNkZTE4MmNkNyIsInVzZXJfaWQiOjN9.M4OE7f5MKUv5XNHFyWnR8NrwZ6_Oyh2mzHrUm2cGyJk"
+                val t =
+                    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMzMTY0MDcxLCJqdGkiOiI3YzA1NDg2OTAxOWY0ZWFlOWJmYmVlNmNkZTE4MmNkNyIsInVzZXJfaWQiOjN9.M4OE7f5MKUv5XNHFyWnR8NrwZ6_Oyh2mzHrUm2cGyJk"
                 Log.i("main", stringRequest.headers.toString());
                 Log.i("main", "3")
                 queue.add(stringRequest)
@@ -177,15 +187,18 @@ class ActualRemoteDataSource(private val context: Context) :RemoteDataSource {
         return false
     }
 
-    private fun getError(): Exception{
+    private fun getError(): Exception {
         return RuntimeException()
     }
 
-    private fun <T> getRoute(className: Class<T>):String{
-        return when (className.simpleName){
+    private fun <T> getRoute(className: Class<T>): String {
+        return when (className.simpleName) {
             "User" -> "user"
             else -> throw RuntimeException("getRoute unknown name " + className.simpleName)
         }
     }
 
+    override fun <T> pushMap(map: Map<String, T>, route: String, loadable: LocalLoadable?) {
+        TODO("Not yet implemented")
+    }
 }

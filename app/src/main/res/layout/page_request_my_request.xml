@@ -21,6 +21,7 @@
         />
 
     <Button
+        android:id = "@+id/request_request"
         style="@style/EmphasizedButton"
         android:text = "Новый запрос"
         android:layout_width="match_parent"

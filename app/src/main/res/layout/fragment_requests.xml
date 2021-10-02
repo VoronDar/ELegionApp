@@ -24,6 +24,7 @@
             android:id = "@+id/planning"
             layout = "@layout/page_request_planning"/>
         <Button
+            android:id = "@+id/request_vacation"
             style="@style/EmphasizedButton"
             android:text = "Запросить отпуск"
             />

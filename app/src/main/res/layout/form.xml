@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style = "@style/back"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding = "20dp"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/elements"
+        android:orientation="vertical"
+        />
+
+    <Button
+        style="@style/CommonButton"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/attach"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/attached_files"
+        android:orientation="vertical"
+        />
+    <Button
+        style="@style/EmphasizedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/accept"
+        android:text = "@string/form_ok"
+        />
+
+
+</LinearLayout>

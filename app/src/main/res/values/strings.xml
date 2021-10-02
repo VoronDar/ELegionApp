@@ -15,4 +15,10 @@
     <string name="vacation_not_soon">%s через несколько недель</string>
     <string name="vacation_plan">уходит</string>
     <string name="vacation_actual">выходит на работу</string>
+
+
+    <string name="vacation_alert_request">Запрос на возмещение</string>
+    <string name="vacation_alert_vacation">Новый запрос</string>
+    <string name="form_ok">Добавить</string>
+
 </resources>

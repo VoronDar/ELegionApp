@@ -77,6 +77,7 @@ class DataController(
     /** return true if the device connected to the internet  */
     fun connected(): Boolean {
         //TODO("find actual way to check connection")
+        if (true) return true
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val nInfo = cm.activeNetworkInfo
         return nInfo != null && nInfo.isAvailable && nInfo.isConnected
