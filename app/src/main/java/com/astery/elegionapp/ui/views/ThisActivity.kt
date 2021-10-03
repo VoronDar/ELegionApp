@@ -1,7 +1,9 @@
 package com.astery.elegionapp.ui.views
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import com.astery.elegionapp.R
 import com.astery.elegionapp.databinding.ActivityMainBinding
 import com.astery.elegionapp.ui.navigation.FragmentNavController
 import com.astery.elegionapp.ui.navigation.ParentActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ThisActivity : AppCompatActivity(), ParentActivity {
 
@@ -30,12 +33,25 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(object:BottomNavigationView.OnNavigationItemSelectedListener{
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when (item.itemId){
+                    R.id.move_development-> move(FragmentNavController.DEVELOPMENT, null)
+                    R.id.move_calendar-> move(FragmentNavController.DEVELOPMENT, null)
+                    R.id.move_third-> move(FragmentNavController.DEVELOPMENT, null)
+                    R.id.move_fourth-> move(FragmentNavController.REQUESTS, null)
+                    R.id.move_fifth-> move(FragmentNavController.DEVELOPMENT, null)
+                }
+                return true
+            }
+        })
+
         pushFragment()
     }
 
     /** add first fragment */
     private fun pushFragment(){
-        navController = FragmentNavController.REQUESTS
+        navController = FragmentNavController.DEVELOPMENT
         currentFragment = navController.thisFragment!!
 
         fragmentManager = supportFragmentManager
@@ -75,5 +91,17 @@ class ThisActivity : AppCompatActivity(), ParentActivity {
             binding.toolbar.visibility = VISIBLE
             supportActionBar?.title = title
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.i("main", "click")
+        when (item.itemId){
+            R.id.move_development-> move(FragmentNavController.DEVELOPMENT, null)
+            R.id.move_calendar-> move(FragmentNavController.DEVELOPMENT, null)
+            R.id.move_third-> move(FragmentNavController.DEVELOPMENT, null)
+            R.id.move_fourth-> move(FragmentNavController.REQUESTS, null)
+            R.id.move_fifth-> move(FragmentNavController.DEVELOPMENT, null)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

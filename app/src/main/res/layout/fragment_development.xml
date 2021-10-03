@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:fadeScrollbars="true"
+    android:scrollbarThumbVertical="@android:color/white"
+    android:overScrollMode="never">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <include
+            android:id = "@+id/roadmap"
+            layout = "@layout/page_development_roadmap"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+        <include
+            android:id = "@+id/goals"
+            layout = "@layout/page_development_goals"/>
+
+        <include
+            android:id = "@+id/tesks"
+            layout = "@layout/page_development_tasks"/>
+        <include
+            android:id = "@+id/skills"
+            layout = "@layout/page_development_skills"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

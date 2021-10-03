@@ -19,6 +19,7 @@
     <color name="common_button_text">#3C6D5F</color>
     <color name="main_button_back">#00AEEF</color>
     <color name="ignore_button_text">#CC32583D</color>
+    <color name="dark_color">#1C273A</color>
 
     <color name="ripple_color">#3360B59D</color>
 
@@ -29,7 +30,10 @@
     <color name = "text_field_back">#E3ECFD</color>
     <color name = "wrong_data">#EF0000</color>
 
-
+    <color name = "development_roadMap_old">
+        #E6F1F5</color>
+    <color name = "development_roadMap_new">
+        ##A4A9B0</color>
 
     <color name="text">#000000</color>
     <color name="stroke"></color>

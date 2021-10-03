@@ -91,7 +91,7 @@ class TextFormElement(text :String, parent:Fragment, name:String) :FormElement(n
         return null
     }
 }
-class EditTextElement(hint :String, parent:Fragment, name:String) :FormElement(name){
+open class EditTextElement(hint :String, parent:Fragment, name:String) :FormElement(name){
     init{
         view = parent.layoutInflater.inflate(R.layout.unit_alert_form, null)
         (view.findViewById(R.id.text) as EditText).hint = hint
@@ -106,6 +106,20 @@ class LongEditTextElement(hint :String, parent:Fragment, name:String) :FormEleme
         view = parent.layoutInflater.inflate(R.layout.unit_alert_form, null)
         (view.findViewById(R.id.text) as TextView).hint = hint
         view.findViewById<View>(R.id.textField).minimumHeight = 100
+    }
+
+    override fun getInfo(): String? {
+        return (view.findViewById(R.id.text)as TextInputEditText).text.toString()
+    }
+}
+
+class NotEditableEditTextElement(hint :String, parent:Fragment, name:String) :EditTextElement(hint, parent, name){
+    init{
+        val text= view.findViewById<EditText>(R.id.text)
+        text.setText(hint)
+        text.isEnabled = false
+        text.isClickable = false
+        text.isFocusable = false
     }
 
     override fun getInfo(): String? {

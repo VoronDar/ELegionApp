@@ -2,10 +2,7 @@ package com.astery.elegionapp.ui.navigation
 
 import android.os.Bundle
 import com.astery.elegionapp.ui.views.XFragment
-import com.astery.elegionapp.ui.views.fragments.AuthFragment
-import com.astery.elegionapp.ui.views.fragments.LoginFragment
-import com.astery.elegionapp.ui.views.fragments.SmsFragment
-import com.astery.elegionapp.ui.views.fragments.VacationFragment
+import com.astery.elegionapp.ui.views.fragments.*
 import com.google.android.material.transition.MaterialSharedAxis
 
 /** navigation controller
@@ -31,6 +28,14 @@ enum class FragmentNavController {
     REQUESTS {
         override val thisFragment: XFragment?
             get() = VacationFragment()
+        override val parent: FragmentNavController?
+            get() = null
+        override val transition: NavigationTransition
+            get() = SharedAxisTransition().setAxis(MaterialSharedAxis.Z).setFirstParent(true)
+    },
+    DEVELOPMENT {
+        override val thisFragment: XFragment?
+            get() = DevelopmentFragment()
         override val parent: FragmentNavController?
             get() = null
         override val transition: NavigationTransition

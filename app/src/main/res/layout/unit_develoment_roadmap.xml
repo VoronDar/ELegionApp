@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/main_button_back"
+    android:id = "@+id/card"
+    android:layout_margin="10dp"
+    android:layout_gravity="center"
+    android:layout_width="180dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/white"
+            style = "@style/CommonText"
+            android:textSize = "@dimen/small_text_size"
+            android:fontFamily="@font/medium"
+            android:text = "Вступил в должность 20. 09"
+            android:layout_marginBottom="15dp"
+            android:id = "@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+        android:textColor="@color/white"
+        style = "@style/CommonText"
+        android:textSize = "@dimen/small_text_size"
+        android:fontFamily="@font/light"
+        android:text = "Jr+ Android Developer"
+        android:id = "@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id = "@+id/icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src = "@color/wrong_data"
+            />
+        <TextView
+            style = "@style/CommonText"
+            android:layout_marginLeft="10dp"
+            android:text = "300"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/white"
+            android:id = "@+id/salary"
+            android:textSize = "@dimen/small_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

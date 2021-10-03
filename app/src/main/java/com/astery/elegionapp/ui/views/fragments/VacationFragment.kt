@@ -164,6 +164,6 @@ class VacationFragment : XFragment() {
     }
 
     override fun getTitle(): String? {
-        return "Заявки"
+        return getString(R.string.title_vacation)
     }
 }

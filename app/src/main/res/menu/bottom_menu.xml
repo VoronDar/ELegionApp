@@ -1,3 +1,45 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.astery.xapplication.ui.views.ThisActivity">
+
+    <item
+        android:id="@+id/move_development"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_elegion"
+        app:showAsAction="always"
+        android:title="profile" />
+
+    <item
+        android:id="@+id/move_calendar"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_elegion"
+        app:showAsAction="always"
+        android:title="profile" />
+
+    <item
+        android:id="@+id/move_third"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_elegion"
+        app:showAsAction="always"
+        android:title="profile" />
+
+    <item
+        android:id="@+id/move_fourth"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_elegion"
+        app:showAsAction="always"
+        android:title="profile" />
+
+    <item
+        android:id="@+id/move_fifth"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_elegion"
+        app:showAsAction="always"
+        android:title="profile" />
 </menu>

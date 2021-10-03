@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    style="@style/card"
+    >
+    <LinearLayout
+        android:id = "@+id/goalsElements"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/HighLightText"
+            android:layout_marginBottom="20dp"
+            android:text = "@string/goals"
+            />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -20,5 +20,13 @@
     <string name="vacation_alert_request">Запрос на возмещение</string>
     <string name="vacation_alert_vacation">Новый запрос</string>
     <string name="form_ok">Добавить</string>
+    <string name="goals">Цели</string>
+    <string name="tasks">Задачи</string>
+    <string name="skills">Навыки</string>
 
+
+    <string name="development_start_work">Вступил в должность %d.%d.%d</string>
+
+    <string name = "title_development">Мое развитие</string>
+    <string name = "title_vacation">Запросы</string>
 </resources>

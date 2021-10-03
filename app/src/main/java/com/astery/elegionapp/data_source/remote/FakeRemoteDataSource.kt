@@ -7,9 +7,7 @@ import com.astery.elegionapp.data_source.local.database.db_utils.LocalLoadable
 import com.astery.elegionapp.data_source.rx_utils.RxExecutable
 import com.astery.elegionapp.data_source.rx_utils.RxTaskManager
 import com.astery.elegionapp.repository.listeners.GetItemListener
-import com.astery.elegionapp.ui.adapters.units.Request
-import com.astery.elegionapp.ui.adapters.units.RequestState
-import com.astery.elegionapp.ui.adapters.units.Vacation
+import com.astery.elegionapp.ui.adapters.units.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -48,7 +46,7 @@ class FakeRemoteDataSource(private val context: Context) : RemoteDataSource {
 
 
     override fun <T> getData(listener: GetItemListener<List<T>>, className: Class<T>) {
-        when(className.simpleName){
+        when (className.simpleName) {
             "Request" -> {
                 val list = ArrayList<Request>()
                 list.add(Request(RequestState.wait, "Покупка ноутбука"))
@@ -56,30 +54,60 @@ class FakeRemoteDataSource(private val context: Context) : RemoteDataSource {
                 list.add(Request(RequestState.accepted, "Покупка клавиатуры"))
                 listener.getItem(list as List<T>)
             }
-            "Vacation" ->{
+            "Vacation" -> {
                 var cal = Calendar.getInstance()
                 val list = ArrayList<Vacation>()
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "asdasd", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+5)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 5)
                 list.add(Vacation("Иван Лисицин", cal, "234", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "3243", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "2222", null, isActive = true))
                 listener.getItem(list as List<T>)
             }
-            "VacationPlan" ->{
+            "VacationPlan" -> {
                 var cal = Calendar.getInstance()
                 val list = ArrayList<Vacation>()
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "asdasd", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+5)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 5)
                 list.add(Vacation("Иван Лисицин", cal, "234", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "3243", null, isActive = true))
-                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR)+1)
+                cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + 1)
                 list.add(Vacation("Иван Лисицин", cal, "2222", null, isActive = true))
+                listener.getItem(list as List<T>)
+            }
+            "RoadMap" -> {
+                val list = ArrayList<RoadMap>()
+                val cal = Calendar.getInstance()
+                list.add(RoadMap("JR Android developer", -1, null, 600))
+                list.add(RoadMap("JR+ Android developer", -1, null, 650))
+                list.add(RoadMap("Middle Android developer", 0, cal, 800))
+                list.add(RoadMap("Senior Android developer", 1, null, 1000))
+                listener.getItem(list as List<T>)
+            }
+            "Task" -> {
+                val list = ArrayList<Task>()
+                list.add(Task("Изучить android studio", 1))
+                list.add(Task("Изучить RxJava", 0))
+                list.add(Task("Изучить Retrofit", 1))
+                listener.getItem(list as List<T>)
+            }
+            "TaskTask" -> {
+                val list = ArrayList<Task>()
+                list.add(Task("40 комиттов на github", 1))
+                list.add(Task("1000 строчек кода", 0))
+                list.add(Task("15 страниц с получением данных", 1))
+                listener.getItem(list as List<T>)
+            }
+            "Skill" -> {
+                val list = ArrayList<Skill>()
+                list.add(Skill("Android studio"))
+                list.add(Skill("Kotlin"))
+                list.add(Skill("Java"))
                 listener.getItem(list as List<T>)
             }
         }
